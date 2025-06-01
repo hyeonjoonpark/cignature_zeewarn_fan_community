@@ -11,7 +11,7 @@ export const boards = [
   { name: '이벤트', icon: (
     <svg className="w-7 h-7 text-[#2563eb]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 7.5h16.5M4.5 21h15a1.5 1.5 0 0 0 1.5-1.5v-11.25a1.5 1.5 0 0 0-1.5-1.5h-15a1.5 1.5 0 0 0-1.5 1.5v11.25A1.5 1.5 0 0 0 4.5 21zm3-6h.008v.008H7.5V15zm3 0h.008v.008H10.5V15zm3 0h.008v.008H13.5V15z" /></svg>
   )},
-  { name: '스타와 팬의 소통', icon: (
+  { name: '스타와 팬의 소통', href: '/chat', icon: (
     <svg className="w-7 h-7 text-[#2563eb]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 1 12 21a7.488 7.488 0 0 1-5.982-2.275M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
   )},
 ]; 
