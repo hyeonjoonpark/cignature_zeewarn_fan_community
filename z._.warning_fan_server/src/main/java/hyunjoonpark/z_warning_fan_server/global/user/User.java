@@ -1,4 +1,4 @@
-package hyunjoonpark.z_warning_fan_server.global.entity;
+package hyunjoonpark.z_warning_fan_server.global.user;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

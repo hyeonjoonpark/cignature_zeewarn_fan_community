@@ -9,7 +9,7 @@ import { Paperclip, Smile } from 'lucide-react';
 const WS_URL = "wss://ws.postman-echo.com/raw";
 const IDOL_NAME = "시그니쳐 지원";
 
-export default function ChatPage() {
+const ChatPage = () => {
   const { user, loading } = useAuth();
   const router = useRouter();
 
@@ -26,11 +26,11 @@ export default function ChatPage() {
     text: "안녕! 오랜만이야! 다들 잘 지냈어?",
     time: "오전 10:00",
   }, {
-    user: user.name,
+    user: user?.name || "익명",
     text: "와 지원님 오셨다!",
     time: "오전 10:01",
   }, {
-    user: user.name,
+    user: user?.name || "익명",
     text: "안녕하세요 지원님! 네 잘 지냈어요.",
     time: "오전 10:02",
   }, {
@@ -42,7 +42,7 @@ export default function ChatPage() {
     text: "지원님도 감기 조심하세요 ㅠㅠㅠㅠ",
     time: "오전 10:06",
   }, {
-    user: user.name,
+    user: user?.name || "익명",
     text: "맞아요! 따뜻한 차 많이 마시구요!",
     time: "오전 10:07",
   }, {
@@ -58,7 +58,7 @@ export default function ChatPage() {
     text: "아니면 같이 게임하는 건 어때요? 다같이 웃고 떠들 수 있는 걸로!",
     time: "오전 10:12",
   }, {
-    user: user.name,
+    user: user?.name || "익명",
     text: "저는 지원님 노래 부르는 거 라이브로 듣고 싶어요 ㅠㅠㅠ",
     time: "오전 10:13",
   }, {
@@ -94,7 +94,7 @@ export default function ChatPage() {
     text: "네 약속! 지원님도요!",
     time: "오전 11:41",
   }, {
-    user: user.name,
+    user: user?.name || "익명",
     text: "지원님 혹시 최근에 재밌게 본 드라마나 영화 있어요?",
     time: "오후 1:00",
   }, {
@@ -113,7 +113,7 @@ export default function ChatPage() {
     time: "오후 1:07",
   }]);
 
-  const [ws, setWs] = useState(null);
+  const [ws, setWs] = useState<WebSocket | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const toastShown = useRef(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -205,8 +205,7 @@ export default function ChatPage() {
   };
 
   const handleEmojiClick = () => {
-    console.log("Emoji button clicked");
-    toast.info("이모티콘 선택 기능은 아직 준비 중입니다!");
+    toast("이모티콘 선택 기능은 아직 준비 중입니다!");
   };
 
   if (loading) {
@@ -400,6 +399,8 @@ export default function ChatPage() {
     </div>
   );
 }
+
+export default ChatPage;
 
 if (typeof window !== "undefined") {
   const style = document.createElement('style');

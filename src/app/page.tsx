@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { boards } from "@/app/components/data/board_data";
+import { boards } from "@/components/data/board_data";
 import { useAuth } from "@/app/context/AuthContext";
 
 export default function Home() {
